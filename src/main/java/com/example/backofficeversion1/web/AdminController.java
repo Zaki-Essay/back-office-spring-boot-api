@@ -4,14 +4,11 @@ package com.example.backofficeversion1.web;
 import com.example.backofficeversion1.dtos.UserDto;
 import com.example.backofficeversion1.exceptions.UserNotFoundException;
 import com.example.backofficeversion1.services.IAdminService;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@AllArgsConstructor
-@Slf4j
+
 @CrossOrigin("*")
 @RestController
 public class AdminController {

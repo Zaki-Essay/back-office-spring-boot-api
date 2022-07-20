@@ -6,8 +6,6 @@ import com.example.backofficeversion1.entities.User;
 import com.example.backofficeversion1.exceptions.UserNotFoundException;
 import com.example.backofficeversion1.mappres.IUserMapper;
 import com.example.backofficeversion1.services.IAdminService;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 //@AllArgsConstructor
-@Slf4j
+
 public class AdminServiceImpl implements IAdminService {
     @Autowired
     private UserDao userDao;
@@ -28,7 +26,7 @@ public class AdminServiceImpl implements IAdminService {
 
     @Override
     public UserDto saveUser(UserDto userDto) {
-        log.info("Saving new user");
+
         User user=userMapper.fromUserDto(userDto);
         User savedUser = userDao.save(user);
         return userMapper.fromUser(savedUser);
@@ -58,7 +56,7 @@ public class AdminServiceImpl implements IAdminService {
 
     @Override
     public UserDto updateUser(UserDto userDto) {
-        log.info("Saving new User");
+
         User user=userMapper.fromUserDto(userDto);
         User savedUser = userDao.save(user);
         return userMapper.fromUser(savedUser);

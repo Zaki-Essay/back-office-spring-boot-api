@@ -1,9 +1,6 @@
 package com.example.backofficeversion1.entities;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +9,7 @@ import javax.persistence.Id;
 
 
 @Entity
-@Data @AllArgsConstructor @NoArgsConstructor
+
 public class Role {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +17,27 @@ public class Role {
     private String roleName;
 
 
+    public Long getRoleId() {
+        return RoleId;
+    }
 
+    public void setRoleId(Long roleId) {
+        RoleId = roleId;
+    }
 
+    public String getRoleName() {
+        return roleName;
+    }
 
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
+    public Role() {
+    }
 
+    public Role(Long roleId, String roleName) {
+        RoleId = roleId;
+        this.roleName = roleName;
+    }
 }
